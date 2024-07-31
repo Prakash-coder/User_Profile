@@ -64,11 +64,60 @@ curl -X POST "http://localhost:8000/api/v1/register-user" -H "Content-Type: appl
     "about": "A short bio",
     "password": "yourpassword"
 }'
+```
+
+### `POST /api/v1/auth/login`
+
+Authenticate a user and return access and refresh tokens.
+
+**Request Body(Form Data)**:
+- `username` (required): Email of the user.
+- `password` (required): Password for the user account.
+
+**Response**:
+- `access_token`: JWT access token.
+- `refresh_token`: JWT refresh token.
+- `token_type`: Type of the token, typically `bearer`.
+
+**Example Request**:
+```sh
 curl -X POST "http://localhost:8000/api/v1/auth/login" -d 'username=john.doe@example.com&password=yourpassword'
+```
+
+### `POST /api/v1/auth/refresh-token`
+
+Authenticate a user and return access and refresh tokens.
+
+**Request Body**:
+- `refresh_token` (required): JWT refresh token.
+
+**Response**:
+- `access_token`: New JWT access token.
+- `token_type`: Type of the token, typically `bearer`.
+
+**Example Request**:
+```sh
 curl -X POST "http://localhost:8000/api/v1/auth/refresh-token" -H "Content-Type: application/json" -d '{
     "refresh_token": "your-refresh-token"
 }'
+```
+
+### `GET /api/v1/me`
+Fetch the profile of the authenticated user.
+
+**Headers**:
+
+- `Authorization`: `Bearer <access_token>`
+**Response**:
+
+- User profile with `id`, `name`, `email`, `location`, and `about`.
+
+**Example Request**:
+```sh
 curl -X GET "http://localhost:8000/api/v1/me" -H "Authorization: Bearer your-access-token"
 ```
+
+
+
 
 
