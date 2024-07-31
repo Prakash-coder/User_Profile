@@ -1,0 +1,38 @@
+# Python-related files
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.swp
+*.swo
+*.egg-info/
+.eggs/
+*.egg
+
+# Virtual environment
+.authfast/
+
+# Configuration files
+*.ini
+*.cfg
+*.toml
+
+# VSCode configuration
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
+
+# dotenv environment variables file
+.env
+
+# Log files
+*.log
+
+# FastAPI specific
+.openapi/
+
+# Alembic migration files
+migrations/
+
