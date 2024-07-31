@@ -86,7 +86,7 @@ curl -X POST "http://localhost:8000/api/v1/auth/login" -d 'username=john.doe@exa
 
 ### `POST /api/v1/auth/refresh-token`
 
-Authenticate a user and return access and refresh tokens.
+Refresh an expired access token using the refresh token.
 
 **Request Body**:
 - `refresh_token` (required): JWT refresh token.
