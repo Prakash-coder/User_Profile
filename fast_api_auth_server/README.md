@@ -23,7 +23,7 @@ This `README.md` file includes clear and complete instructions for setting up th
 4. **Setup PostgreSQL database** and update `.env` file with the connection details:
     ```dotenv
     SECRET_KEY=your-generated-secret-key
-    SQLALCHEMY_DATABASE_URL=postgresql://user:password@localhost/dbname
+    DATABASE_URL=postgresql://user:password@localhost/dbname
     ```
 
 5. **Run Alembic migrations**:
